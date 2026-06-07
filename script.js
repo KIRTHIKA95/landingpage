@@ -1,4 +1,3 @@
-// 1. Animation Machine à écrire
 const text = "Découvrez l'offre de formation Bachelor Universitaire de Technologie à Sénart Fontainebleau.";
 let i = 0;
 function typeWriter() {
@@ -8,16 +7,15 @@ function typeWriter() {
     }
 }
 
-// 2. Interaction du Cube avec la souris
+
 document.addEventListener('mousemove', (e) => {
     const cube = document.querySelector('.cube');
-    // Calcul de l'inclinaison douce
     let x = (window.innerWidth / 2 - e.pageX) / 15;
     let y = (window.innerHeight / 2 - e.pageY) / 15;
     cube.style.transform = `rotateX(${y}deg) rotateY(${x}deg)`;
 });
 
-// 3. Animation de révélation des cartes au scroll
+
 const cards = document.querySelectorAll('.card');
 const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
@@ -31,7 +29,6 @@ const observer = new IntersectionObserver((entries) => {
 cards.forEach((card, index) => {
     card.style.opacity = "0";
     card.style.transform = "translateY(50px)";
-    // On utilise la courbe de Bézier demandée
     card.style.transition = `all 0.8s cubic-bezier(0.19, 1, 0.22, 1) ${index * 0.05}s`;
     observer.observe(card);
 });
